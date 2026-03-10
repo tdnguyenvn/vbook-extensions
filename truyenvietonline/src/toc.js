@@ -12,8 +12,8 @@ function execute(url) {
 
     let doc = response.html();
 
-    // Lấy danh sách chương trang 1
-    doc.select(".chapter-list li a").forEach(function (e) {
+    // Lấy danh sách chương từ #dschuong (tránh lấy nhầm "Chương mới nhất")
+    doc.select("#dschuong .chapter-list li a").forEach(function (e) {
         allChapters.push({
             name: e.text(),
             url: e.attr("href"),
@@ -40,7 +40,7 @@ function execute(url) {
         if (!pageResponse.ok) break;
 
         let pageDoc = pageResponse.html();
-        pageDoc.select(".chapter-list li a").forEach(function (e) {
+        pageDoc.select("#dschuong .chapter-list li a").forEach(function (e) {
             allChapters.push({
                 name: e.text(),
                 url: e.attr("href"),
