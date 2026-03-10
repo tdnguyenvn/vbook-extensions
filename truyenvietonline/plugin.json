@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "name": "Truyện Việt Online",
+        "author": "tdnguyenvn",
+        "version": 1,
+        "source": "https://truyenvietonline.com",
+        "regexp": "truyenvietonline.com/[^/]+/?$",
+        "description": "Đọc truyện trên trang truyenvietonline.com",
+        "locale": "vi_VN",
+        "type": "novel",
+        "language": "javascript"
+    },
+    "script": {
+        "home": "home.js",
+        "genre": "genre.js",
+        "detail": "detail.js",
+        "search": "search.js",
+        "page": "page.js",
+        "toc": "toc.js",
+        "chap": "chap.js",
+        "gen": "gen.js",
+        "tab": "tab.js"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "metadata": {
+        "author": "tdnguyenvn",
+        "description": "Plugin đọc truyện cho vBook"
+    },
+    "data": [
+        {
+            "name": "Truyện Việt Online",
+            "author": "tdnguyenvn",
+            "path": "https://raw.githubusercontent.com/tdnguyenvn/vbook-extensions/master/truyenvietonline/plugin.zip",
+            "version": 1,
+            "source": "https://truyenvietonline.com",
+            "icon": "https://raw.githubusercontent.com/tdnguyenvn/vbook-extensions/master/truyenvietonline/icon.png",
+            "description": "Đọc truyện trên trang truyenvietonline.com",
+            "type": "novel",
+            "locale": "vi_VN"
+        }
+    ]
+}
