@@ -1,0 +1,23 @@
+{
+    "metadata": {
+        "name": "Truyện Free",
+        "author": "tdnguyenvn",
+        "version": 1,
+        "source": "https://truyenfree.org",
+        "regexp": "truyenfree.org/truyen/[^/]+",
+        "description": "Đọc truyện trên trang truyenfree.org",
+        "locale": "vi_VN",
+        "type": "novel",
+        "language": "javascript"
+    },
+    "script": {
+        "home": "home.js",
+        "genre": "genre.js",
+        "detail": "detail.js",
+        "search": "search.js",
+        "page": "page.js",
+        "toc": "toc.js",
+        "chap": "chap.js",
+        "gen": "gen.js"
+    }
+}
