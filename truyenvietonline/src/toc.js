@@ -1,41 +1,52 @@
 function execute(url) {
     let allChapters = [];
-    let page = 1;
-    let hasNext = true;
 
-    while (hasNext) {
-        let pageUrl = url;
-        if (page > 1) {
-            pageUrl = url + "?chuong_page=" + page;
+    // Đảm bảo URL kết thúc bằng /
+    if (!url.endsWith("/")) {
+        url = url + "/";
+    }
+
+    // Lấy trang đầu tiên
+    let response = fetch(url);
+    if (!response.ok) return null;
+
+    let doc = response.html();
+
+    // Lấy danh sách chương trang 1
+    doc.select(".chapter-list li a").forEach(function (e) {
+        allChapters.push({
+            name: e.text(),
+            url: e.attr("href"),
+            host: "https://truyenvietonline.com"
+        });
+    });
+
+    // Tìm tổng số trang từ pagination
+    let maxPage = 1;
+    doc.select(".pagination a").forEach(function (e) {
+        let href = e.attr("href");
+        if (href) {
+            let match = href.match(/chuong_page=(\d+)/);
+            if (match) {
+                let p = parseInt(match[1]);
+                if (p > maxPage) maxPage = p;
+            }
         }
+    });
 
-        let response = fetch(pageUrl);
-        if (!response.ok) break;
+    // Lấy các trang tiếp theo
+    for (let page = 2; page <= maxPage; page++) {
+        let pageResponse = fetch(url + "?chuong_page=" + page);
+        if (!pageResponse.ok) break;
 
-        let doc = response.html();
-
-        doc.select(".chapter-list li h3 a").forEach(function (e) {
+        let pageDoc = pageResponse.html();
+        pageDoc.select(".chapter-list li a").forEach(function (e) {
             allChapters.push({
                 name: e.text(),
                 url: e.attr("href"),
                 host: "https://truyenvietonline.com"
             });
         });
-
-        // Kiểm tra có trang tiếp theo không
-        let nextPage = false;
-        doc.select(".pagination a").forEach(function (e) {
-            let href = e.attr("href");
-            if (href && href.indexOf("chuong_page=" + (page + 1)) !== -1) {
-                nextPage = true;
-            }
-        });
-
-        if (nextPage) {
-            page++;
-        } else {
-            hasNext = false;
-        }
     }
 
     if (allChapters.length > 0) {
