@@ -2,7 +2,7 @@
     "metadata": {
         "name": "Truyện Free",
         "author": "tdnguyenvn",
-        "version": 1,
+        "version": 2,
         "source": "https://truyenfree.org",
         "regexp": "truyenfree.org/truyen/[^/]+",
         "description": "Đọc truyện trên trang truyenfree.org",

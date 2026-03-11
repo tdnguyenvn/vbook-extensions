@@ -1,17 +1,24 @@
 function execute(url) {
-    let response = fetch(url);
+    var response = fetch(url);
     if (response.ok) {
-        let doc = response.html();
+        var doc = response.html();
 
-        // Theo phân tích DOM:
-        let content = doc.select("#chapter-content").html();
-        if (!content) content = doc.select(".chapter-content").html();
+        // Nội dung chương nằm trong thẻ <article>
+        var content = doc.select("article").first();
+        if (content) {
+            var html = content.html();
+            // Remove script/style tags
+            html = html.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '');
+            html = html.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '');
+            return Response.success(html);
+        }
 
-        // Remove qc hoặc tracking nếu có
-        content = content.replace(/<script[^>]*>.*<\/script>/g, '');
-        content = content.replace(/<style[^>]*>.*<\/style>/g, '');
-
-        return Response.success(content);
+        // Fallback: thử các selector khác
+        content = doc.select("#chapter-content").first();
+        if (!content) content = doc.select(".chapter-content").first();
+        if (content) {
+            return Response.success(content.html());
+        }
     }
     return null;
 }
