@@ -1,30 +1,30 @@
 {
-    "metadata": {
-        "author": "tdnguyenvn",
-        "description": "Plugin đọc truyện cho vBook"
+  "metadata": {
+    "author": "tdnguyenvn",
+    "description": "Plugin đọc truyện cho vBook"
+  },
+  "data": [
+    {
+      "name": "Truyện Việt Online",
+      "author": "tdnguyenvn",
+      "path": "https://raw.githubusercontent.com/tdnguyenvn/vbook-extensions/master/truyenvietonline/plugin.zip",
+      "version": 1,
+      "source": "https://truyenvietonline.com",
+      "icon": "https://raw.githubusercontent.com/tdnguyenvn/vbook-extensions/master/truyenvietonline/icon.png",
+      "description": "Đọc truyện trên trang truyenvietonline.com",
+      "type": "novel",
+      "locale": "vi_VN"
     },
-    "data": [
-        {
-            "name": "Truyện Việt Online",
-            "author": "tdnguyenvn",
-            "path": "https://raw.githubusercontent.com/tdnguyenvn/vbook-extensions/master/truyenvietonline/plugin.zip",
-            "version": 1,
-            "source": "https://truyenvietonline.com",
-            "icon": "https://raw.githubusercontent.com/tdnguyenvn/vbook-extensions/master/truyenvietonline/icon.png",
-            "description": "Đọc truyện trên trang truyenvietonline.com",
-            "type": "novel",
-            "locale": "vi_VN"
-        },
-        {
-            "name": "Truyện Free",
-            "author": "tdnguyenvn",
-            "path": "https://raw.githubusercontent.com/tdnguyenvn/vbook-extensions/master/truyenfree/plugin.zip",
-            "version": 1,
-            "source": "https://truyenfree.org",
-            "icon": "https://raw.githubusercontent.com/tdnguyenvn/vbook-extensions/master/truyenfree/icon.png",
-            "description": "Đọc truyện trên trang truyenfree.org",
-            "type": "novel",
-            "locale": "vi_VN"
-        }
-    ]
+    {
+      "name": "Truyện Free",
+      "author": "tdnguyenvn",
+      "path": "https://raw.githubusercontent.com/tdnguyenvn/vbook-extensions/master/truyenfree/plugin.zip",
+      "version": 2,
+      "source": "https://truyenfree.org",
+      "icon": "https://raw.githubusercontent.com/tdnguyenvn/vbook-extensions/master/truyenfree/icon.png",
+      "description": "Đọc truyện trên trang truyenfree.org",
+      "type": "novel",
+      "locale": "vi_VN"
+    }
+  ]
 }
